@@ -3,6 +3,16 @@ import React, { useState } from "react";
 function Topbar() {
   const [show, setShow] = useState(" ");
   const [active, setActive] = useState(false);
+  const [alertClicked, setALertClicked] = useState(false);
+  const [messageClicked, setMessageClicked] = useState(false);
+
+  let handleMessageClick = () => {
+    setMessageClicked(!messageClicked);
+  };
+
+  let handleAlertClick = () => {
+    setALertClicked(!alertClicked);
+  };
 
   let handleClick = () => {
     setActive(!active);
@@ -77,15 +87,22 @@ function Topbar() {
         </li>
 
         {/* <!-- Nav Item - Alerts -->*/}
-        <li class="nav-item dropdown no-arrow mx-1">
+        <li
+          class={
+            alertClicked
+              ? "nav-item dropdown no-arrow mx-1 show"
+              : "nav-item dropdown no-arrow mx-1"
+          }
+        >
           <a
+            onClick={handleAlertClick}
             class="nav-link dropdown-toggle"
             href="#"
             id="alertsDropdown"
             role="button"
             data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
+            aria-haspopup={alertClicked ? "true" : "false"}
+            aria-expanded="true"
           >
             <i class="fas fa-bell fa-fw"></i>
             {/* <!-- Counter - Alerts -->*/}
@@ -93,7 +110,11 @@ function Topbar() {
           </a>
           {/* <!-- Dropdown - Alerts -->*/}
           <div
-            class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+            class={
+              alertClicked
+                ? "dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in show"
+                : "dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+            }
             aria-labelledby="alertsDropdown"
           >
             <h6 class="dropdown-header">Alerts Center</h6>
@@ -140,15 +161,22 @@ function Topbar() {
         </li>
 
         {/* <!-- Nav Item - Messages -->*/}
-        <li class="nav-item dropdown no-arrow mx-1">
+        <li
+          className={
+            messageClicked
+              ? "nav-item dropdown no-arrow mx-1 show"
+              : "nav-item dropdown no-arrow mx-1"
+          }
+        >
           <a
+            onClick={handleMessageClick}
             class="nav-link dropdown-toggle"
             href="#"
             id="messagesDropdown"
             role="button"
             data-toggle="dropdown"
             aria-haspopup="true"
-            aria-expanded="false"
+            aria-expanded={messageClicked ? "true" : "false"}
           >
             <i class="fas fa-envelope fa-fw"></i>
             {/* <!-- Counter - Messages -->*/}
@@ -156,7 +184,11 @@ function Topbar() {
           </a>
           {/* <!-- Dropdown - Messages -->*/}
           <div
-            class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+            class={
+              messageClicked
+                ? "dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in show"
+                : "dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+            }
             aria-labelledby="messagesDropdown"
           >
             <h6 class="dropdown-header">Message Center</h6>
