@@ -47,7 +47,12 @@ function Sidebar() {
 
       {/* <!-- Nav Item - Dashboard -->*/}
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a
+          class="nav-link"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>
@@ -71,7 +76,7 @@ function Sidebar() {
           aria-controls="collapseTwo"
         >
           <i class="fas fa-fw fa-cog"></i>
-          <span>Components</span>
+          <span>School Management</span>
         </a>
         <div
           id="collapseTwo"
@@ -81,120 +86,14 @@ function Sidebar() {
         >
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" onClick={() => navigate("/button")}>
-              Buttons
+            <a class="collapse-item" onClick={() => navigate("/students-list")}>
+              Students List
             </a>
-            <a class="collapse-item" onClick={() => navigate("/cards")}>
-              Cards
-            </a>
-          </div>
-        </div>
-      </li>
-
-      {/* <!-- Nav Item - Utilities Collapse Menu -->*/}
-      <li class="nav-item">
-        <a
-          onClick={handleUtilityCollapse}
-          class={utilityClicked ? "nav-link" : "nav-link collapsed"}
-          href="#"
-          data-toggle="collapse"
-          data-target="#collapseUtilities"
-          aria-expanded={utilityClicked ? "true" : "false"}
-          aria-controls="collapseUtilities"
-        >
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Utilities</span>
-        </a>
-        <div
-          id="collapseUtilities"
-          class={utilityClicked ? "collapse show" : "collapse"}
-          aria-labelledby="headingUtilities"
-          data-parent="#accordionSidebar"
-        >
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" onClick={() => navigate("/colors")}>
-              Colors
-            </a>
-            <a class="collapse-item" onClick={() => navigate("/borders")}>
-              Borders
-            </a>
-            <a class="collapse-item" onClick={() => navigate("/animations")}>
-              Animations
-            </a>
-            <a class="collapse-item" onClick={() => navigate("/other")}>
-              Other
+            <a class="collapse-item" onClick={() => navigate("/teachers-list")}>
+              Teachers List
             </a>
           </div>
         </div>
-      </li>
-
-      {/* <!-- Divider -->*/}
-      <hr class="sidebar-divider" />
-
-      {/* <!-- Heading -->*/}
-      <div class="sidebar-heading">Addons</div>
-
-      {/* <!-- Nav Item - Pages Collapse Menu -->*/}
-      <li class="nav-item">
-        <a
-          onClick={handlePagesCollapse}
-          class={pagesClicked ? "nav-link" : "nav-link collapsed"}
-          href="#"
-          data-toggle="collapse"
-          data-target="#collapsePages"
-          aria-expanded={pagesClicked ? "true" : "false"}
-          aria-controls="collapsePages"
-        >
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
-        </a>
-        <div
-          id="collapsePages"
-          class={pagesClicked ? "collapse show" : "collapse"}
-          aria-labelledby="headingPages"
-          data-parent="#accordionSidebar"
-        >
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" onClick={() => navigate("/login")}>
-              Login
-            </a>
-            <a class="collapse-item" onClick={() => navigate("/register")}>
-              Register
-            </a>
-            <a
-              class="collapse-item"
-              onClick={() => navigate("/forgetpassword")}
-            >
-              Forgot Password
-            </a>
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" onClick={() => navigate("/404/error")}>
-              404 Page
-            </a>
-            <a class="collapse-item" onClick={() => navigate("/blankpage")}>
-              Blank Page
-            </a>
-          </div>
-        </div>
-      </li>
-
-      {/* <!-- Nav Item - Charts -->*/}
-      <li class="nav-item">
-        <a class="nav-link" onClick={()=>navigate("/charts")}>
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span>
-        </a>
-      </li>
-
-      {/* <!-- Nav Item - Tables -->*/}
-      <li class="nav-item">
-        <a class="nav-link" onClick={()=>navigate("/tables")}>
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span>
-        </a>
       </li>
 
       {/* <!-- Divider -->*/}

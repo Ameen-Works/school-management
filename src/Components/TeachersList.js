@@ -1,10 +1,10 @@
 import React from "react";
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
-import CardsPageContent from "./CardsPageContent";
+import CardsPageContent from "./TeachersPageContent";
 import Footer from "./Footer";
 
-function Cards() {
+function TeachersList() {
   return (
     <body id="page-top">
       {/* <!-- Page Wrapper -->*/}
@@ -104,4 +104,4 @@ function Cards() {
   );
 }
 
-export default Cards;
+export default TeachersList;
